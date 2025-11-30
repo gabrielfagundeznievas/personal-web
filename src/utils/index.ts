@@ -1,0 +1,1 @@
+export { calculateVersion } from './version';
