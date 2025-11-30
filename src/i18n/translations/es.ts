@@ -39,7 +39,7 @@ export const es: Translations = {
     },
     {
       title: "Herramientas Internas Alsacia",
-      description: "Software de gestion interna en .NET y Angular. Optimizacion de flujos operativos."
+      description: "Software de gestion interna en .NET y NextJs. Optimizacion de flujos operativos."
     }
   ],
   experiences: [
@@ -49,7 +49,7 @@ export const es: Translations = {
     },
     {
       role: "Desarrollador de Software",
-      description: "Participacion en el desarrollo de software interno utilizando .NET y Angular. Colaboracion en equipo multidisciplinario para definir requerimientos y optimizar procesos."
+      description: "Participacion en el desarrollo de software interno utilizando .NET y NextJs. Colaboracion en equipo multidisciplinario para definir requerimientos y optimizar procesos."
     },
     {
       role: "Desarrollador Full Stack",

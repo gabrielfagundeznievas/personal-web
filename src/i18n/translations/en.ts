@@ -39,7 +39,7 @@ export const en: Translations = {
     },
     {
       title: "Alsacia Internal Tools",
-      description: "Internal management software in .NET and Angular. Operational flow optimization."
+      description: "Internal management software in .NET and NextJs. Operational flow optimization."
     }
   ],
   experiences: [
@@ -49,7 +49,7 @@ export const en: Translations = {
     },
     {
       role: "Software Developer",
-      description: "Participation in internal software development using .NET and Angular. Collaboration in multidisciplinary team to define requirements and optimize processes."
+      description: "Participation in internal software development using .NET and NextJs. Collaboration in multidisciplinary team to define requirements and optimize processes."
     },
     {
       role: "Full Stack Developer",

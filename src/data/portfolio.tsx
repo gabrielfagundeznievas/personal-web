@@ -30,8 +30,8 @@ export const EXPERIENCE: Experience[] = [
     company: "ALSACIA SOFTWARE",
     role: "Desarrollador de Software",
     period: "FEB 2025 - OCT 2025",
-    description: "Participacion en el desarrollo de software interno utilizando .NET y Angular. Colaboracion en equipo multidisciplinario para definir requerimientos y optimizar procesos.",
-    tech: [".NET", "ANGULAR", "C#", "SQL"]
+    description: "Participacion en el desarrollo de software interno utilizando .NET y NextJs. Colaboracion en equipo multidisciplinario para definir requerimientos y optimizar procesos.",
+    tech: [".NET", "NextJs", "C#", "SQL"]
   },
   {
     id: 2,
@@ -60,7 +60,7 @@ export const SKILLS: Skill[] = [
   {
     category: "FRONTEND",
     icon: <Zap className="text-fuchsia-400" />,
-    items: ["React.js", "Angular", "Next.js", "JavaScript/ES6+", "SASS/CSS"]
+    items: ["React.js", "Next.js", "TypeScript", "JavaScript/ES6+", "SASS/CSS"]
   },
   {
     category: "DATABASE",
@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
   {
     id: 1,
     title: "Alsacia Internal Tools",
-    description: "Software de gestion interna en .NET y Angular. Optimizacion de flujos operativos.",
+    description: "Software de gestion interna en .NET y NextJs. Optimizacion de flujos operativos.",
     status: "PRODUCTION",
     statusColor: "emerald",
     icon: <Code2 className="text-emerald-500 w-8 h-8" />

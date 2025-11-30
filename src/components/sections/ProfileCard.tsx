@@ -6,12 +6,13 @@ import { calculateVersion } from '../../utils';
 interface SkillBar {
   label: string;
   percentage: number;
-  color: 'cyan' | 'fuchsia';
+  color: 'cyan' | 'fuchsia' | 'emerald';
 }
 
 const SKILL_BARS: SkillBar[] = [
-  { label: "JAVA / SPRING BOOT", percentage: 95, color: 'cyan' },
-  { label: ".NET / ANGULAR", percentage: 90, color: 'fuchsia' }
+  { label: "TS / NESTJS", percentage: 100, color: 'cyan' },
+  { label: "JAVA / SPRING BOOT", percentage: 95, color: 'emerald' },
+  { label: "C# / .NET", percentage: 90, color: 'fuchsia' }
 ];
 
 export function ProfileCard() {
@@ -36,20 +37,31 @@ export function ProfileCard() {
         </p>
 
         <div className="space-y-4 pt-4 border-t border-white/10">
-          {SKILL_BARS.map(({ label, percentage, color }) => (
-            <div key={label}>
-              <div className={`flex justify-between text-xs mb-1 font-bold ${color === 'cyan' ? 'text-cyan-400' : 'text-fuchsia-400'}`}>
-                <span>{label}</span>
-                <span>{percentage}%</span>
+          {SKILL_BARS.map(({ label, percentage, color }) => {
+            const textColor = {
+              cyan: 'text-cyan-400',
+              fuchsia: 'text-fuchsia-400',
+              emerald: 'text-emerald-400'
+            }[color];
+
+            const barStyle = {
+              cyan: 'bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]',
+              fuchsia: 'bg-fuchsia-500 shadow-[0_0_10px_rgba(217,70,239,0.5)]',
+              emerald: 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]'
+            }[color];
+
+            return (
+              <div key={label}>
+                <div className={`flex justify-between text-xs mb-1 font-bold ${textColor}`}>
+                  <span>{label}</span>
+                  <span>{percentage}%</span>
+                </div>
+                <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                  <div className={`h-full ${barStyle}`} style={{ width: `${percentage}%` }} />
+                </div>
               </div>
-              <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                <div
-                  className={`h-full ${color === 'cyan' ? 'bg-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.5)]' : 'bg-fuchsia-500 shadow-[0_0_10px_rgba(217,70,239,0.5)]'}`}
-                  style={{ width: `${percentage}%` }}
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </TiltCard>
