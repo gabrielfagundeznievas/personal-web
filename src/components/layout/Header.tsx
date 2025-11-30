@@ -1,5 +1,6 @@
 import { GithubIcon, LinkedinIcon, Mail } from 'lucide-react';
-import { GlitchText } from '../ui';
+import { GlitchText, LanguageToggle } from '../ui';
+import { useLanguage } from '../../i18n';
 import type { PersonalInfo } from '../../types';
 
 interface HeaderProps {
@@ -13,6 +14,8 @@ const SOCIAL_LINKS = [
 ] as const;
 
 export function Header({ info }: HeaderProps) {
+  const { t } = useLanguage();
+
   const getLink = (key: typeof SOCIAL_LINKS[number]['key']) => {
     if (key === 'email') return `mailto:${info.email}`;
     return info[key];
@@ -22,8 +25,8 @@ export function Header({ info }: HeaderProps) {
     <header className="mb-24 text-center md:text-left md:flex justify-between items-end border-b border-white/10 pb-8">
       <div>
         <div className="flex items-center gap-2 mb-2 text-cyan-400 text-sm tracking-widest">
-          <span className="animate-pulse">●</span> SYSTEM ONLINE
-          <span className="hidden sm:inline"> // UY-MONTEVIDEO-ROOT</span>
+          <span className="animate-pulse">●</span> {t.header.status}
+          <span className="hidden sm:inline"> // {t.header.location}</span>
         </div>
         <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-2 text-transparent bg-clip-text bg-linear-to-r from-white via-cyan-100 to-slate-400">
           <GlitchText text={info.name} />
@@ -37,7 +40,8 @@ export function Header({ info }: HeaderProps) {
         </h2>
       </div>
 
-      <div className="flex gap-4 mt-8 md:mt-0 justify-center md:justify-start">
+      <div className="flex items-center gap-4 mt-8 md:mt-0 justify-center md:justify-start">
+        <LanguageToggle />
         {SOCIAL_LINKS.map(({ Icon, key }) => (
           <a
             key={key}

@@ -1,5 +1,6 @@
 import { Cpu } from 'lucide-react';
 import { TiltCard } from '../ui';
+import { useLanguage } from '../../i18n';
 import { calculateVersion } from '../../utils';
 
 interface SkillBar {
@@ -15,6 +16,7 @@ const SKILL_BARS: SkillBar[] = [
 
 export function ProfileCard() {
   const version = calculateVersion();
+  const { t } = useLanguage();
 
   return (
     <TiltCard className="h-auto">
@@ -27,10 +29,10 @@ export function ProfileCard() {
         </div>
 
         <p className="text-slate-400 text-sm leading-relaxed mb-6">
-          Ingeniero Backend especializado en <span className="text-white font-bold">Java, .NET y Node.js</span>.
+          {t.profile.specializedIn} <span className="text-white font-bold">{t.profile.techStack}</span>.
           <br/><br/>
-          Obsesionado con el <span className="text-cyan-400">rendimiento</span> y la gestion de memoria.
-          +10 anos dominando entornos <span className="text-white font-bold">Linux</span> y optimizando arquitecturas criticas.
+          {t.profile.obsessedWith} <span className="text-cyan-400">{t.profile.performance}</span> {t.profile.andMemory}
+          {' '}{t.profile.yearsMastering} <span className="text-white font-bold">{t.profile.linux}</span> {t.profile.andOptimizing}
         </p>
 
         <div className="space-y-4 pt-4 border-t border-white/10">
